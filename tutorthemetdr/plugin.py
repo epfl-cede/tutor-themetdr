@@ -29,8 +29,6 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
         # tutor config save --set THEMETDR_FOOTER_NAV_LINKS=[]
         "FOOTER_NAV_LINKS": [
             {"title": "About Us", "url": "/about"},
-            {"title": "Blog", "url": "/blog"},
-            {"title": "Donate", "url": "/donate"},
             {"title": "Terms of Service", "url": "/tos"},
             {"title": "Privacy Policy", "url": "/privacy"},
             {"title": "Help", "url": "/help"},
@@ -194,7 +192,7 @@ for path in glob(
         hooks.Filters.ENV_PATCHES.add_item((os.path.basename(path), patch_file.read()))
 
 
-for mfe in indigo_styled_mfes:
+for mfe in themetdr_styled_mfes:
     PLUGIN_SLOTS.add_item(
         (
             mfe,

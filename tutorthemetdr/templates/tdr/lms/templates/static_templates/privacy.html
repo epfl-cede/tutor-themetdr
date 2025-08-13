@@ -1,24 +1,114 @@
-<%namespace name='static' file='../static_content.html'/>
 <%page expression_filter="h"/>
 <%! from django.utils.translation import gettext as _ %>
-
 
 <%inherit file="../main.html" />
 
 <%block name="pagetitle">${_("Privacy Policy")}</%block>
 
 <main id="main" aria-label="Content" tabindex="-1">
-    <section class="container about">
-        <h1>
-            <%block name="pageheader">${page_header or _("Privacy Policy")}</%block>
-        </h1>
-        <p>
-            <%block name="pagecontent">${page_content or _("This page left intentionally blank. Feel free to add your own content.")}</%block>
-        </p>
-        <!-- NEW IN INDIGO: add graphic image -->
-        <div class="graphic-img">
-            <img src="${static.url('images/privacy.svg')}" alt="Runs on Tutor" />
-            <img class="dark" src="${static.url('images/privacy-dark.svg')}" alt="Runs on Tutor" />
-        </div>
-    </section>
+  <section class="container about">
+    <h1>
+      <%block name="pageheader">${page_header or _("Privacy Policy")}</%block>
+    </h1>
+    <h3>${_("Date of publication: 11th January 2017")}</h3>
+    <dl>
+      <dt>1. <a href="#p1">${_("Data which may be collected")}</a></dt>
+      <dt>2. <a href="#p2">${_("Data use objectives")}</a></dt>
+      <dt>3. <a href="#p3">${_("Cookies, web beacons and Google Analytics")}</a></dt>
+      <dt>4. <a href="#p4">${_("Sharing and transmission of data to third-parties")}</a></dt>
+      <dt>5. <a href="#p5">${_("Data privacy and security")}</a></dt>
+      <dt>6. <a href="#p6">${_("Transmission abroad")}</a></dt>
+      <dt>7. <a href="#p7">${_("Right of access, rectification and opposition")}</a></dt>
+      <dt>8. <a href="#p8">${_("Exclusion of liability")}</a></dt>
+      <dt>9. <a href="#p9">${_("Jurisdiction and applicable law")}</a></dt>
+      <dt>10. <a href="#p10">${_("Appendix")}</a></dt>
+    </dl>
+
+    <p>${_("The Special Programme for Research and Training in Tropical Diseases sponsored by UNICEF, World bank, UNDP and WHO(Switzerland) (hereafter \"TDR\" or \"We\") proposes access and use of <a href=\"https://www.tdrmooc.org\">TDRCourseware</a> (hereafter \"Services\") to users (hereafter \"User\" or \"You\"), namely via the websites (hereafter individually or collectively the \"Website\"). These Services and the Website are governed by the General Terms and Conditions (hereafter \"CGU\").")}</p>
+
+    <p>${_("Within the framework of your visit to the Website and use of its Services, TDR may collect certain elements of your personal data from You. The present Privacy Policy (hereafter \"<b>Policy</b>\"), which shall remain applicable regardless of the means or materials used to access the Website and Services, sets out the conditions under which, when You use the Website or Services, TDR shall collect, conserve, use and safeguard information about You, as well as the options available to You regarding the collection, use and disclosure of this information. The Policy constitutes an integral component of the CGU.")}</p>
+
+    <p>${_("By accessing the Website and/or using the Services, You acknowledge that You have read, understood and accepted that You are subject to all of the conditions laid down in the CGU and the Policy.")}</p>
+
+    <p>${_("All terms which are not specifically defined in the Policy bear the same definition as is attributed to them in the CGU.")}</p>
+
+    <h2 id="p1">1. ${_("Data which may be collected")}</h2>
+
+    <h2>1.1 ${_("Data communicated by the User")}</h2>
+
+    <p>${_("When You register with the Website or interact in any other manner with TDR within the framework of the Services, You may be requested to provide us with certain data, such as your personal address, professional address, invoicing information, login information, etc. either directly or via a pre-existing account (for example, SWITCH AAI) (hereafter \"<b>Registration data</b>\"). You may also freely provide supplementary information.")}</p>
+
+    <h2>1.2 ${_("Usage data from the Website and Services")}</h2>
+
+    <p>${_("When You browse the Website or receive and/or consult our emails and interact with either of the above, or when You use certain Services, We shall use automatic data collection technologies to collect certain information regarding your actions. This includes data such as your IP address, the hyperlinks on which You click, the pages or the content that You view, the viewing duration and other similar information and statistics regarding your interactions, such as the content response time, loading errors and the duration of your visit to certain pages, the type of web browser used or the connection location, for example. These data are collected through automated technologies such as cookies (browser cookies, flash cookies) and web beacons. The information is also collected via external monitoring services (for example, Google Analytics).")}</p>
+
+    <h2>1.3 ${_("Data from social networks")}</h2>
+
+    <p>${_("When You allow a third-party social network (such as Youtube, Facebook, etc.) to share and/or interact with us, We shall receive all data You have shared publicly on the third-party social network and data included on your profile. This may concern basic data relating to your account (for example, your name, your email address, your gender, your date of birth, your city of residence, your profile photograph, your username, your friend list, etc.) and all other information or activities that You have allowed the third-party social network to share.")}</p>
+
+    <p>${_("We shall also receive data regarding your profile when You use a social network function integrated in the Website (such as Facebook Connect) or when You interact with us via a social network. To learn more about the manner in which We receive information about you from third-party social networks or to cease sharing your data on these social networks, We invite you to consult the terms and conditions of these social networks, for which we accept no responsibility.")}</p>
+
+    <h2 id="p2">2. ${_("Data use objectives")}</h2>
+
+    <p>${_("The present article describes the aims for which We collect your data. All forms of data use are not applicable to all Users. It is to be noted that your data must be handled in accordance with the applicable legal framework as well as the relevant EPFL competences.")}</p>
+
+    <h2>2.1 ${_("Service provision and Website management")}</h2>
+
+    <p>${_("We use your data to provide Services, to interact with You and to respond to your requests regarding the Website or Services. Your data may also be used with the aim of detecting fraud.")}</p>
+
+    <h2>2.2 ${_("Benefits relating to surveys and statistics")}</h2>
+
+    <p>${_("With your consent or if the law allows us, We shall use your data to send You information regarding our Services in relation to studies and to the Website in general, to request your participation in surveys, namely statistic-based, or to develop a more direct relationship with You. Data related to Service use shall also be used on an aggregated basis in order to better understand the use of the Services and to improve their workings.")}</p>
+
+    <h2>2.3 ${_("Personalisation")}</h2>
+
+    <p>${_("With your consent or provided the law allows us, We shall use you data to analyse your preferences and your User habits, to personalise your experience on our Website, and to optimise our Website and Services for You and your computer. We may also suggest content to You which better corresponds to your interests as a result.")}</p>
+
+    <h2 id="p3">3. ${_("Cookies, web beacons and Google Analytics")}</h2>
+
+    <p>${_("We may use cookies, Web beacons or similar technologies in order to identify You as a User and safeguard your personal preferences (language choice, for example), as well as technical information (including data such as click reports and path reports). This allows us to simplify your access to the Services and to analyse the traffic and uses, and to identify malfunctions in the Website and Services. This also allows us to improve both your experience and the Website design and content.")}</p>
+
+    <p>${_("The Website may also use Google Analytics, a website analysis service which is provided by Google Inc. (\"Google\"). Google Analytics uses cookies. The data generated by these cookies concerning your use of the Website (including your IP address) shall be communicated to and stocked by Google on servers located in the United States of America. Google shall use this information to evaluate your use of the Website, to compile reports on the activities of the Website for its publisher and provide additional services relating to the activity of the Website and use of the internet. Google may communicate this information to third-parties, but shall not undertake in the cross-referencing of your IP address with other information held by Google. By using this Website, you specifically accept that your personal data will be handled by Google under the conditions and for the objectives outlined above.")}</p>
+
+    <p>${_("You may disactivate the use of cookies by selecting the relevant security settings for your web browser. However, this form of deactivation may prevent the use of certain Website functions.")}</p>
+
+    <h2 id="p4">4. ${_("Sharing and transmission of data to third-parties")}</h2>
+
+    <h2>4.1 ${_("Subcontracting")}</h2>
+
+    <p>${_("TDR may use subcontractors or service providers, particularly technical service providers, insofar as is necessary for the completion of the duties entrusted to them. As such, TDR may call on service providers to manage and/or maintain the Website and the Services, for advertising purposes or to send messages from our account, to conduct research, and to monitor and analyse the status of our network, the response capacity of our services and the efficiency of our communication.")}</p>
+
+    <h2>4.2 ${_("Transmission to third-parties")}</h2>
+
+    <p>${_("We may transmit your data to third-parties if the law or a request from a judicial or administrative authority so requires, in order to protect our rights or our interests, or to enforce the terms of the Contract.")}</p>
+
+    <h2 id="p5">5. ${_("Data privacy and security")}</h2>
+
+    <p>${_("Although complete security on the internet is not possible, We have implemented standard security measures (of a technical and organisational nature) in accordance with standard regulations, taking into account the risks involved in protecting information about You from any accidental or intentional manipulation, loss, destruction or communication, or from all non-authorised access.")}</p>
+
+    <h2 id="p6">6. ${_("Transmission abroad")}</h2>
+
+    <p>${_("Your data shall be primarily handled and stored in Switzerland or in the European Union. Should We request the services of a foreign service provider, We shall, of course, respect the applicable legal framework and shall adopt the measures required by law before commencing communications abroad.")}</p>
+
+    <h2 id="p7">7. ${_("Right of access, rectification and opposition")}</h2>
+
+    <p>${_("You have the right to be aware of the personal information held by TDR about You. You also have the right to update, rectify and delete personal information about You. You have the right to oppose the handling of your personal data, subject to a legitimate reason.")}</p>
+
+    <p>${_("You also have the right to oppose the use of your personal data for commercial prospection.")}</p>
+
+    <p>${_("If You wish to exercise one of the rights listed above, please contact us in writing at the following address: at WHO/TDR, 20 Ave Appia 1211 Geneva 27. We may request that You provide proof of your identity (a copy of your identification card, for example).")}</p>
+
+    <p>${_("It is expressly stated that all data collected via the Website (automatically or transmitted by You) may be conserved and remain safeguarded, even after the cancelation of your account or the closure of the Website, at least temporarily, in particular (namely) in the case of recovery systems. Anonymous information (namely including data collected through the use of cookies) may be conserved without limit.")}</p>
+
+    <h2 id="p8">8. ${_("Exclusion of liability")}</h2>
+
+    <p>${_("For any prejudice or damages relating to your personal data that You incur in connection with the use of the Website, the Services or any other element in relation to the Contract, We expressly refer you to Article 5.3 of the CGU, \"Exclusion of Liability\".")}</p>
+
+    <h2 id="p9">9. ${_("Jurisdiction and applicable law")}</h2>
+
+    <p>${_("The Contract and all resulting questions or questions in connection with it, including those relating to the use of the Website and the Services, shall be governed by and construed in accordance with Swiss law, without regard to conflict of law principles. You hereby agree that the courts of the district of Lausanne (Switzerland) shall have exclusive jurisdiction. Nothing in or in relating to this GCU shall be deemed a waiver of any of the privileges and immunities of WHO in conformity with the Convention on the Privilege and Immunities of The Specialised Agencies approved by the General Assembly of the United Nations on November 21, 1947 or otherwise under any national or international law, convention and agreement.")}</p>
+
+    <h2 id="p10">10. ${_("Appendix")}</h2>
+    <p>${_("Some course videos may be hosted on YouTube. In such case, the <a href=\"https://policies.google.com/privacy\">Google privacy policy</a> applies.")}</p>
+  </section>
 </main>

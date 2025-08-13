@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     function applyThemeOnPage(){
       const theme = $.cookie(themeCookie);
-      {% if INDIGO_ENABLE_DARK_TOGGLE %}
+      {% if THEMETDR_ENABLE_DARK_TOGGLE %}
       $('body').toggleClass("indigo-dark-theme", theme === 'dark');       // append or remove dark-class based on cookie-value
       // update expiry
       $.cookie(themeCookie, theme, { domain: window.location.hostname, expires: 90, path: '/' });
