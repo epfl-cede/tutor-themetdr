@@ -1,9 +1,9 @@
 variables:
-    TUTOR_PLUGIN: indigo
+    TUTOR_PLUGIN: themetdr
     TUTOR_EXTRA_ENABLED_PLUGINS: mfe
-    TUTOR_PYPI_PACKAGE: tutor-indigo
+    TUTOR_PYPI_PACKAGE: tutor-themetdr
     TUTOR_IMAGES: openedx mfe
-    GITHUB_REPO: overhangio/tutor-indigo
+    GITHUB_REPO: epfl-cede/tutor-themetdr
 
 include:
   - project: 'community/tutor-ci'
