@@ -22,11 +22,11 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
     "defaults": {
         "VERSION": __version__,
         "WELCOME_MESSAGE": "The place for all your online learning",
-        "PRIMARY_COLOR": "#15376D",  # Indigo
+        "PRIMARY_COLOR": "#15376D",  # TDR
         "ENABLE_DARK_TOGGLE": True,
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
-        # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
+        # tutor config save --set THEMETDR_FOOTER_NAV_LINKS=[]
         "FOOTER_NAV_LINKS": [
             {"title": "About Us", "url": "/about"},
             {"title": "Blog", "url": "/blog"},
@@ -43,21 +43,21 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
 
 # Theme templates
 hooks.Filters.ENV_TEMPLATE_ROOTS.add_item(
-    str(importlib_resources.files("tutorindigo") / "templates")
+    str(importlib_resources.files("tutorthemetdr") / "templates")
 )
 # This is where the theme is rendered in the openedx build directory
 hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
     [
-        ("indigo", "build/openedx/themes"),
-        ("indigo/env.config.jsx", "plugins/mfe/build/mfe"),
+        ("tdr", "build/openedx/themes"),
+        ("tdr/env.config.jsx", "plugins/mfe/build/mfe"),
     ],
 )
 
 # Force the rendering of scss files, even though they are included in a "partials" directory
 hooks.Filters.ENV_PATTERNS_INCLUDE.add_items(
     [
-        r"indigo/lms/static/sass/partials/lms/theme/",
-        r"indigo/cms/static/sass/partials/cms/theme/",
+        r"tdr/lms/static/sass/partials/lms/theme/",
+        r"tdr/cms/static/sass/partials/cms/theme/",
     ]
 )
 
@@ -65,8 +65,8 @@ hooks.Filters.ENV_PATTERNS_INCLUDE.add_items(
 # init script: set theme automatically
 with open(
     os.path.join(
-        str(importlib_resources.files("tutorindigo") / "templates"),
-        "indigo",
+        str(importlib_resources.files("tutorthemetdr") / "templates"),
+        "tdr",
         "tasks",
         "init.sh",
     ),
@@ -88,24 +88,24 @@ def _override_openedx_docker_image(
         elif k == "MFE_DOCKER_IMAGE":
             mfe_image = v
     if openedx_image:
-        items.append(("DOCKER_IMAGE_OPENEDX", f"{openedx_image}-indigo"))
+        items.append(("DOCKER_IMAGE_OPENEDX", f"{openedx_image}-tdr"))
     if mfe_image:
-        items.append(("MFE_DOCKER_IMAGE", f"{mfe_image}-indigo"))
+        items.append(("MFE_DOCKER_IMAGE", f"{mfe_image}-tdr"))
     return items
 
 
 # Load all configuration entries
 hooks.Filters.CONFIG_DEFAULTS.add_items(
-    [(f"INDIGO_{key}", value) for key, value in config["defaults"].items()]
+    [(f"THEMETDR_{key}", value) for key, value in config["defaults"].items()]
 )
 hooks.Filters.CONFIG_UNIQUE.add_items(
-    [(f"INDIGO_{key}", value) for key, value in config["unique"].items()]
+    [(f"THEMETDR_{key}", value) for key, value in config["unique"].items()]
 )
 hooks.Filters.CONFIG_OVERRIDES.add_items(list(config["overrides"].items()))
 
 
-#  MFEs that are styled using Indigo
-indigo_styled_mfes = [
+#  MFEs that are styled using Themetdr
+themetdr_styled_mfes = [
     "learning",
     "learner-dashboard",
     "profile",
@@ -114,7 +114,7 @@ indigo_styled_mfes = [
 ]
 
 
-for mfe in indigo_styled_mfes:
+for mfe in themetdr_styled_mfes:
     hooks.Filters.ENV_PATCHES.add_items(
         [
             (
@@ -152,7 +152,7 @@ hooks.Filters.ENV_PATCHES.add_items(
             "openedx-common-assets-settings",
             """
 javascript_files = ['base_application', 'application', 'certificates_wv']
-dark_theme_filepath = ['indigo/js/dark-theme.js']
+dark_theme_filepath = ['tdr/js/dark-theme.js']
 
 for filename in javascript_files:
     if filename in PIPELINE['JAVASCRIPT']:
@@ -164,29 +164,29 @@ for filename in javascript_files:
             "openedx-lms-development-settings",
             """
 javascript_files = ['base_application', 'application', 'certificates_wv']
-dark_theme_filepath = ['indigo/js/dark-theme.js']
+dark_theme_filepath = ['tdr/js/dark-theme.js']
 
 for filename in javascript_files:
     if filename in PIPELINE['JAVASCRIPT']:
         PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
 
-MFE_CONFIG['INDIGO_ENABLE_DARK_TOGGLE'] = {{ INDIGO_ENABLE_DARK_TOGGLE }}
+MFE_CONFIG['THEMETDR_ENABLE_DARK_TOGGLE'] = {{ THEMETDR_ENABLE_DARK_TOGGLE }}
 """,
         ),
         (
             "openedx-lms-production-settings",
             """
-MFE_CONFIG['INDIGO_ENABLE_DARK_TOGGLE'] = {{ INDIGO_ENABLE_DARK_TOGGLE }}
+MFE_CONFIG['THEMETDR_ENABLE_DARK_TOGGLE'] = {{ THEMETDR_ENABLE_DARK_TOGGLE }}
 """,
         ),
     ]
 )
 
 
-# Apply patches from tutor-indigo
+# Apply patches from tutor-themetdr
 for path in glob(
     os.path.join(
-        str(importlib_resources.files("tutorindigo") / "patches"),
+        str(importlib_resources.files("tutorthemetdr") / "patches"),
         "*",
     )
 ):
@@ -199,7 +199,7 @@ for mfe in indigo_styled_mfes:
         (
             mfe,
             "footer_slot",
-            """ 
+            """
             {
                 op: PLUGIN_OPERATIONS.Hide,
                 widgetId: 'default_contents',

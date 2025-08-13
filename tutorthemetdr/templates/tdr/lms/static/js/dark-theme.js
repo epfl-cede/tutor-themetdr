@@ -1,7 +1,7 @@
 $(document).ready(function() {
     'use strict';
 
-    const themeCookie = 'indigo-toggle-dark';
+    const themeCookie = 'themetdr-toggle-dark';
 
     function applyThemeOnPage(){
       const theme = $.cookie(themeCookie);
@@ -30,17 +30,17 @@ $(document).ready(function() {
         textWrapper.attr('aria-checked', 'false');
       }
     }
-    
+
     function toggleTheme(){
       const themeValue = $.cookie(themeCookie) === 'dark' ? 'light' : 'dark';
       $.cookie(themeCookie, themeValue, { domain: window.location.hostname, expires: 90, path: '/' });
-        
+
       applyThemeOnPage();
     }
 
     // Listener for updating the theme inside an iframe
     window.addEventListener("message", function(e){
-      if (e.data && e.data["indigo-toggle-dark"]){
+      if (e.data && e.data["themetdr-toggle-dark"]){
         applyThemeOnPage();
       }
     });
