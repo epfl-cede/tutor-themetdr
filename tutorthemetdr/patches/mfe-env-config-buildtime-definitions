@@ -5,7 +5,7 @@ let themeCookieExpiry = 90; // days
 
 const AddDarkTheme = () => {
   const cookies = new Cookies();
-  const isThemeToggleEnabled = getConfig().INDIGO_ENABLE_DARK_TOGGLE;
+  const isThemeToggleEnabled = getConfig().THEMETDR_ENABLE_DARK_TOGGLE;
 
   const getCookieExpiry = () => {
     const today = new Date();

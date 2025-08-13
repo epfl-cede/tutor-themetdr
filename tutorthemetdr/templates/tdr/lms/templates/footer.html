@@ -42,10 +42,10 @@
         </li>
       </ul>
     </div>
-    {% if INDIGO_FOOTER_NAV_LINKS %}
+    {% if THEMETDR_FOOTER_NAV_LINKS %}
     <nav class="nav-colophon" aria-label="${_('About')}">
       <ol>
-          {% for link in INDIGO_FOOTER_NAV_LINKS %}
+          {% for link in THEMETDR_FOOTER_NAV_LINKS %}
           <li>
             <a href="{{ link['url'] }}">{{ link['title'] }}</a>
           </li>
@@ -106,10 +106,10 @@
           </li>
         </ul>
       </div>
-      {% if INDIGO_FOOTER_NAV_LINKS %}
+      {% if THEMETDR_FOOTER_NAV_LINKS %}
       <nav class="nav-colophon" aria-label="${_('About')}">
         <ol>
-            {% for link in INDIGO_FOOTER_NAV_LINKS %}
+            {% for link in THEMETDR_FOOTER_NAV_LINKS %}
             <li>
               <a href="{{ link['url'] }}">{{ link['title'] }}</a>
             </li>

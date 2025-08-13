@@ -34,7 +34,7 @@ header.global-header {
                 margin: 20px 0 0;
             }
             .logo {
-                height: 24px;
+                height: 34px;
                 margin: 0;
             }
         }
@@ -182,7 +182,7 @@ header.global-header {
 
 .theme-toggle-button{
     position: relative;
-    display: {% if INDIGO_ENABLE_DARK_TOGGLE %}flex{% else %}none{% endif %};
+    display: {% if THEMETDR_ENABLE_DARK_TOGGLE %}flex{% else %}none{% endif %};
     align-items: center;
     margin-right: 0 !important;
 
