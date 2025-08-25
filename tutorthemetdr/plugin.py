@@ -118,15 +118,16 @@ for mfe in themetdr_styled_mfes:
             (
                 f"mfe-dockerfile-post-npm-install-{mfe}",
                 """
-RUN npm install "@edx/frontend-component-footer@git+https://git@github.com/epfl-cede/frontend-component-footer#sms/indigo"
-RUN npm install "@edx/brand@git+https://git@github.com/epfl-cede/brand-cede#sms/sumac-blue.3"
+RUN npm install '@epfl-cede/indigo-frontend-component-footer@git+https://git@github.com/epfl-cede/frontend-component-footer#sms/indigo'
+RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.2.2'
+RUN npm install '@edx/brand@git+https://git@github.com/epfl-cede/brand-cede#sms/sumac-blue.3'
 
 """,
             ),
             (
                 f"mfe-env-config-runtime-definitions-{mfe}",
                 """
-const { default: IndigoFooter } = await import('@edx/frontend-component-footer');
+const { default: IndigoFooter } = await import('@epfl-cede/indigo-frontend-component-footer');
 """,
             ),
         ]
@@ -141,6 +142,42 @@ hooks.Filters.ENV_PATCHES.add_item(
 )
 
 # Include js file in lms main.html, main_django.html, and certificate.html
+hooks.Filters.ENV_PATCHES.add_items(
+    [
+        # for production
+        (
+            "openedx-common-assets-settings",
+            """
+javascript_files = ['base_application', 'application', 'certificates_wv']
+dark_theme_filepath = ['tdr/js/dark-theme.js']
+
+for filename in javascript_files:
+    if filename in PIPELINE['JAVASCRIPT']:
+        PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
+""",
+        ),
+        # for development
+        (
+            "openedx-lms-development-settings",
+            """
+javascript_files = ['base_application', 'application', 'certificates_wv']
+dark_theme_filepath = ['tdr/js/dark-theme.js']
+
+for filename in javascript_files:
+    if filename in PIPELINE['JAVASCRIPT']:
+        PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
+
+MFE_CONFIG['THEMETDR_ENABLE_DARK_TOGGLE'] = {{ THEMETDR_ENABLE_DARK_TOGGLE }}
+""",
+        ),
+        (
+            "openedx-lms-production-settings",
+            """
+MFE_CONFIG['THEMETDR_ENABLE_DARK_TOGGLE'] = {{ THEMETDR_ENABLE_DARK_TOGGLE }}
+""",
+        ),
+    ]
+)
 
 
 # Apply patches from tutor-themetdr
