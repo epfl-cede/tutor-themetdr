@@ -1,4 +1,6 @@
+<%page expression_filter="h"/>
 <%! from django.utils.translation import gettext as _ %>
+
 <%inherit file="../main.html" />
 
 <%block name="pagetitle">${_("General Terms and Conditions (CGU)")}</%block>
@@ -92,6 +94,6 @@
     <p>${_("For all questions regarding the CGU, and to report any violation, please contact us at WHO/TDR, 20 Ave Appia 1211 Geneva 27.")}</p>
 
     <h2 id="p11">11. ${_("Appendix")}</h2>
-    <p>${_("Some course videos may be hosted on YouTube. In such case, the <a href=\"https://www.youtube.com/t/terms\">YouTube terms of service</a> apply.")}</p>
+    <p>${_("Some course videos may be hosted on YouTube. In such case, the <a href='https://www.youtube.com/t/terms'>YouTube terms of service</a> apply.")}</p>
   </section>
 </main>
