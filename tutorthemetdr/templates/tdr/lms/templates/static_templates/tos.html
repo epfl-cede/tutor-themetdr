@@ -1,99 +1,98 @@
 <%page expression_filter="h"/>
-<%! from django.utils.translation import gettext as _ %>
 
 <%inherit file="../main.html" />
 
-<%block name="pagetitle">${_("General Terms and Conditions (CGU)")}</%block>
+<%block name="pagetitle">General Terms and Conditions (CGU)</%block>
 
 <main id="main" aria-label="Content" tabindex="-1">
   <section class="container about">
     <h1>
-      <%block name="pageheader">${page_header or _("General Terms and Conditions (CGU)")}</%block>
+      <%block name="pageheader">${page_header or "General Terms and Conditions (CGU)"}</%block>
     </h1>
-    <h3>${_("Date of publication: 4 May 2018")}</h3>
+    <h3>Date of publication: 4 May 2018</h3>
     <dl>
-      <dt>1. <a href="#p1">${_("Acceptance of the CGU")}</a></dt>
-      <dt>2. <a href="#p2">${_("Registered Users")}</a></dt>
-      <dt>3. <a href="#p3">${_("Modifications and Cancellation")}</a></dt>
-      <dt>4. <a href="#p4">${_("Guarantees")}</a></dt>
+      <dt>1. <a href="#p1">Acceptance of the CGU</a></dt>
+      <dt>2. <a href="#p2">Registered Users</a></dt>
+      <dt>3. <a href="#p3">Modifications and Cancellation</a></dt>
+      <dt>4. <a href="#p4">Guarantees</a></dt>
       <dd>
         <dl>
-          <dt>4.1. <a href="#p4.1">${_("User liability")}</a></dt>
-          <dt>4.2. <a href="#p4.2">${_("Availability")}</a></dt>
-          <dt>4.3. <a href="#p4.3">${_("Exclusion of liability")}</a></dt>
+          <dt>4.1. <a href="#p4.1">User liability</a></dt>
+          <dt>4.2. <a href="#p4.2">Availability</a></dt>
+          <dt>4.3. <a href="#p4.3">Exclusion of liability</a></dt>
         </dl>
       </dd>
-      <dt>5. <a href="#p5">${_("Account, password and security")}</a></dt>
-      <dt>6. <a href="#p6">${_("Intellectual property")}</a></dt>
-      <dt>7. <a href="#p7">${_("Privacy policy")}</a></dt>
-      <dt>8. <a href="#p8">${_("Miscellaneous")}</a></dt>
-      <dt>9. <a href="#p9">${_("Jurisdiction and applicable law")}</a></dt>
-      <dt>10. <a href="#p10">${_("Contact")}</a></dt>
-      <dt>11. <a href="#p11">${_("Appendix")}</a></dt>
+      <dt>5. <a href="#p5">Account, password and security</a></dt>
+      <dt>6. <a href="#p6">Intellectual property</a></dt>
+      <dt>7. <a href="#p7">Privacy policy</a></dt>
+      <dt>8. <a href="#p8">Miscellaneous</a></dt>
+      <dt>9. <a href="#p9">Jurisdiction and applicable law</a></dt>
+      <dt>10. <a href="#p10">Contact</a></dt>
+      <dt>11. <a href="#p11">Appendix</a></dt>
     </dl>
 
-    <p>${_("The present General Terms and Conditions (hereafter \"<b>CGU</b>\") set out the conditions under which the Special Programme for Reearch and Training in Tropical Diseases  sponsored by UNICEF, World bank , UNDP and WHO (Switzerland) (hereafter \"<b>TDR</b>\" or \"<b>We</b>\") proposes access and use of TDR Courseware (hereafter \"<b>Services</b>\") to users (hereafter \"<b>User</b>\" or \"<b>You</b>\"), namely via the websites https://www.tdrmooc.org (hereafter individually or collectively the \"<b>Website</b>\"). The Website aims to publish various content, materials and components in relation to the Services, namely including videos, images and content relating to online courses.")}</p>
+    <p>The present General Terms and Conditions (hereafter "<b>CGU</b>") set out the conditions under which the Special Programme for Reearch and Training in Tropical Diseases  sponsored by UNICEF, World bank , UNDP and WHO (Switzerland) (hereafter "<b>TDR</b>" or "<b>We</b>") proposes access and use of TDR Courseware (hereafter "<b>Services</b>") to users (hereafter "<b>User</b>" or "<b>You</b>"), namely via the websites https://www.tdrmooc.org (hereafter individually or collectively the "<b>Website</b>"). The Website aims to publish various content, materials and components in relation to the Services, namely including videos, images and content relating to online courses.</p>
 
-    <h2 id="p2">1. ${_("Acceptance of the CGU")}</h2>
-    <p>${_("By accessing the Website and/or using the Services, You acknowledge that you have read, understood and accepted that You are subject to all of the conditions laid down in the CGU. The CGU, alongside any procurement and any specific conditions, form the contract (hereafter \"<b>Contract</b>\"). Where Services are provided via a third-party site (for example, Youtube), You also accept the general terms and conditions and the privacy policy of the third-party site, for which TDR accepts no liability.")}</p>
+    <h2 id="p2">1. Acceptance of the CGU</h2>
+    <p>By accessing the Website and/or using the Services, You acknowledge that you have read, understood and accepted that You are subject to all of the conditions laid down in the CGU. The CGU, alongside any procurement and any specific conditions, form the contract (hereafter "<b>Contract</b>"). Where Services are provided via a third-party site (for example, Youtube), You also accept the general terms and conditions and the privacy policy of the third-party site, for which TDR accepts no liability.</p>
 
-    <p>${_("TDR reserves the right to modify the present CGU and/or Privacy Policy at any time. If You are a registered User, You shall be informed where necessary by email of any new versions of the CGU or Privacy Policy. New versions of the CGU or Privacy Policy shall also be made available on the Website. You are responsible for regularly checking the CGU and the Privacy Policy and for keeping yourself up to date regarding any modifications. Your continued use of the Website and Services after the posting of modifications will constitute express acceptance of the modifications.")}</p>
+    <p>TDR reserves the right to modify the present CGU and/or Privacy Policy at any time. If You are a registered User, You shall be informed where necessary by email of any new versions of the CGU or Privacy Policy. New versions of the CGU or Privacy Policy shall also be made available on the Website. You are responsible for regularly checking the CGU and the Privacy Policy and for keeping yourself up to date regarding any modifications. Your continued use of the Website and Services after the posting of modifications will constitute express acceptance of the modifications.</p>
 
-    <h2 id="p2">2. ${_("Registered Users")}</h2>
-    <p>${_("Use of Services may be reserved for registered Users. In order to become and in becoming a registered User, You represent and warrant that:")}</p>
+    <h2 id="p2">2. Registered Users</h2>
+    <p>Use of Services may be reserved for registered Users. In order to become and in becoming a registered User, You represent and warrant that:</p>
     <ul>
-      <li>${_("You are aged eighteen (18) years or over, or are over the legal minimum age in your country of residence where this exceeds eighteen (18) years.")}</li>
-      <li>${_("The information that You provide at the point of your inscription or online registration (hereafter \"<b>Registration data</b>\") is accurate, current and complete, and You shall maintain this information up to date.")}</li>
-      <li>${_("You have the right to access the Website and to use the Services from your country of residence and in accordance with the laws applicable to you.")}</li>
-      <li>${_("You shall never transfer your account, your username or your password to a third-party.")}</li>
+      <li>You are aged eighteen (18) years or over, or are over the legal minimum age in your country of residence where this exceeds eighteen (18) years.</li>
+      <li>The information that You provide at the point of your inscription or online registration (hereafter "<b>Registration data</b>") is accurate, current and complete, and You shall maintain this information up to date.</li>
+      <li>You have the right to access the Website and to use the Services from your country of residence and in accordance with the laws applicable to you.</li>
+      <li>You shall never transfer your account, your username or your password to a third-party.</li>
     </ul>
 
-    <h2 id="p3">3. ${_("Modifications and Cancellation")}</h2>
-    <p>${_("You agree that TDR may, at its sole discretion, modify, suspend or even close the Website and the Services, cancel a course, exclude a User, block, cancel or suspend your account, subcontract certain Services, and make certain parts or all of the Services chargeable or free, this with or without reason, with or without notice, and at any moment. TDR shall not incur any liability towards You in such a case, including for any prejudice or loss of data which may ensue - explicit reference is made in Article 5.3 below.")}<p>
-    <p>${_("In the case of significant modification to the Services, You shall be given prior notice and You shall be provided the possibility of cancelling your registration.")}</p>
-    <p>${_("You may cancel your account at any time by sending an email to launoisp@who.int. Your access, possibility of using the Website and participation in the Website, including any content which may be found there, may be excluded by TDR at any time.")}</p>
+    <h2 id="p3">3. Modifications and Cancellation</h2>
+    <p>You agree that TDR may, at its sole discretion, modify, suspend or even close the Website and the Services, cancel a course, exclude a User, block, cancel or suspend your account, subcontract certain Services, and make certain parts or all of the Services chargeable or free, this with or without reason, with or without notice, and at any moment. TDR shall not incur any liability towards You in such a case, including for any prejudice or loss of data which may ensue - explicit reference is made in Article 5.3 below.</p>
+    <p>In the case of significant modification to the Services, You shall be given prior notice and You shall be provided the possibility of cancelling your registration.</p>
+    <p>You may cancel your account at any time by sending an email to launoisp@who.int. Your access, possibility of using the Website and participation in the Website, including any content which may be found there, may be excluded by TDR at any time.</p>
 
-    <h2 id="p4">4. ${_("Guarantees")}</h2>
-    <h2 id="p4.1">4.1. ${_("User liability")}</h2>
-    <p>${_("You agree to withhold from violating any legal standard and to withhold from using the Services for unlawful purposes or for any purpose other than that for which they are offered to You.")}<p>
-    <p>${_("You also agree to compensate and to hold harmless TDR and its employees from and against all claims, costs, damages and expenses (including legal fees and court expenses) resulting from (i) your use of the Services; (ii) your non-respect or violation of any provision of the CGU or the conditions applicable to a third-party website; (iii) the non-authorised use of your account; (iv) damages caused following the violation of third-party rights via the use of the Services and (v) any other cause leading to damages for TDR.")}</p>
+    <h2 id="p4">4. Guarantees</h2>
+    <h2 id="p4.1">4.1. User liability</h2>
+    <p>You agree to withhold from violating any legal standard and to withhold from using the Services for unlawful purposes or for any purpose other than that for which they are offered to You.</p>
+    <p>You also agree to compensate and to hold harmless TDR and its employees from and against all claims, costs, damages and expenses (including legal fees and court expenses) resulting from (i) your use of the Services; (ii) your non-respect or violation of any provision of the CGU or the conditions applicable to a third-party website; (iii) the non-authorised use of your account; (iv) damages caused following the violation of third-party rights via the use of the Services and (v) any other cause leading to damages for TDR.</p>
 
-    <h2 id="p4.2">4.2. ${_("Availability")}</h2>
-    <p>${_("TDR shall endeavour to ensure the reliable and lasting functioning of the Website and the Services, but We cannot guarantee smooth and uninterrupted use of the Website and Services, nor can We guarantee that the Website or Services remain free from viruses, malfunctions or faults.")}<p>
-    <p>${_("The Website and Services accessible over the internet may be affected by periods of temporary unavailability. From time to time, TDR shall update the Website and Services, an action which shall render them inaccessible during a certain period.")}</p>
-    <p>${_("If the User must access the Website and the Services before a specific deadline, he/she shall take into account the risks of unavailability and shall be considered solely responsible for taking the necessary measures in order achieve access in advance.")}</p>
+    <h2 id="p4.2">4.2. Availability</h2>
+    <p>TDR shall endeavour to ensure the reliable and lasting functioning of the Website and the Services, but We cannot guarantee smooth and uninterrupted use of the Website and Services, nor can We guarantee that the Website or Services remain free from viruses, malfunctions or faults.</p>
+    <p>The Website and Services accessible over the internet may be affected by periods of temporary unavailability. From time to time, TDR shall update the Website and Services, an action which shall render them inaccessible during a certain period.</p>
+    <p>If the User must access the Website and the Services before a specific deadline, he/she shall take into account the risks of unavailability and shall be considered solely responsible for taking the necessary measures in order achieve access in advance.</p>
 
-    <h2 id="p4.3">4.3. ${_("Exclusion of liability")}</h2>
-    <p>${_("You use the Website and Services at your sole risk. TDR endeavours to offer quality, up to date content in the training courses it provides. However, We do not guarantee that the content of the Website or the Services shall be constantly up to date, available, free from error or consistent with the User's expectations.")}<p>
-    <p>${_("If examinations are offered by TDR or by a third-party, TDR does not guarantee success, nor that they shall correspond to the training course content, nor that they shall be recognised by a third-party (academically, professionally or otherwise).")}</p>
-    <p>${_("Within the limitations of the law, TDR accepts no liability or responsibility. This exclusion of liability includes namely, but not exclusively, all prejudice as well as all indirect, special, consecutive, exemplary or punitive damages and interests, missed examinations, loss of profits, loss of income or loss of data.")}<p>
+    <h2 id="p4.3">4.3. Exclusion of liability</h2>
+    <p>You use the Website and Services at your sole risk. TDR endeavours to offer quality, up to date content in the training courses it provides. However, We do not guarantee that the content of the Website or the Services shall be constantly up to date, available, free from error or consistent with the User's expectations.</p>
+    <p>If examinations are offered by TDR or by a third-party, TDR does not guarantee success, nor that they shall correspond to the training course content, nor that they shall be recognised by a third-party (academically, professionally or otherwise).</p>
+    <p>Within the limitations of the law, TDR accepts no liability or responsibility. This exclusion of liability includes namely, but not exclusively, all prejudice as well as all indirect, special, consecutive, exemplary or punitive damages and interests, missed examinations, loss of profits, loss of income or loss of data.</p>
 
-    <h2 id="p5">5. ${_("Account, password and security")}</h2>
-    <p>${_("The User is responsible for the quality and confidentiality of the password chosen at the time of his/her registration, as well as for all activity generated through his/her password and account. The User shall keep the passwords given to him/her confidential and shall ensure that they are never shared with a third-party.")}<p>
-    <p>${_("You agree to inform TDR immediately of any fraudulent use of your password or your account and of any other breach of security, and You agree to close your account at the end of each session (logout).")}</p>
-    <p>${_("You are solely responsible for the conservation and safeguarding of your data.")}</p>
+    <h2 id="p5">5. Account, password and security</h2>
+    <p>The User is responsible for the quality and confidentiality of the password chosen at the time of his/her registration, as well as for all activity generated through his/her password and account. The User shall keep the passwords given to him/her confidential and shall ensure that they are never shared with a third-party.</p>
+    <p>You agree to inform TDR immediately of any fraudulent use of your password or your account and of any other breach of security, and You agree to close your account at the end of each session (logout).</p>
+    <p>You are solely responsible for the conservation and safeguarding of your data.</p>
 
-    <h2 id="p6">6. ${_("Intellectual property")}</h2>
-    <p>${_("The Website and their Services, as well as their content, are protected by  WHO regulation relating to intellectual property, copyright and trademark laws. For the duration of your lessons, and provided that You respect the terms of the Contract, TDR grants You a time-limited, personal, non-exclusive, non-sublicensable, non-transferable license to use the Services for non-commercial purposes. This license may be revoked at any time.")}<p>
-    <p>${_("Unless expressly and specifically provided for, the present CGU grant You no right, title or interest with regards to the Services, trademarks, rights, logos and other elements of TDR identity or that of any other third-party which may participate in relation to the Services.")}</p>
-    <p>${_("Any use which would violate this license, namely use for commercial purposes or the distribution of lesson aids, shall result in the immediate and automatic cancelation of the Contract, without prejudice to any other rights (namely damages) which may be asserted by TDR.")}</p>
+    <h2 id="p6">6. Intellectual property</h2>
+    <p>The Website and their Services, as well as their content, are protected by  WHO regulation relating to intellectual property, copyright and trademark laws. For the duration of your lessons, and provided that You respect the terms of the Contract, TDR grants You a time-limited, personal, non-exclusive, non-sublicensable, non-transferable license to use the Services for non-commercial purposes. This license may be revoked at any time.</p>
+    <p>Unless expressly and specifically provided for, the present CGU grant You no right, title or interest with regards to the Services, trademarks, rights, logos and other elements of TDR identity or that of any other third-party which may participate in relation to the Services.</p>
+    <p>Any use which would violate this license, namely use for commercial purposes or the distribution of lesson aids, shall result in the immediate and automatic cancelation of the Contract, without prejudice to any other rights (namely damages) which may be asserted by TDR.</p>
 
-    <h2 id="p7">7. ${_("Privacy policy")}</h2>
-    <p>${_("By using the Website and the Services, You agree to provide certain personal data, including Registration data and certain other information about You. TDR agrees to collect and handle this data in accordance with the Privacy Policy available <a href='/privacy'>here</a>.")}</p>
+    <h2 id="p7">7. Privacy policy</h2>
+    <p>By using the Website and the Services, You agree to provide certain personal data, including Registration data and certain other information about You. TDR agrees to collect and handle this data in accordance with the Privacy Policy available <a href="/privacy">here</a>.</p>
 
-    <h2 id="p8">8. ${_("Miscellaneous")}</h2>
-    <p>${_("TDR's failure to exercise or enforce any right or provision in the terms and conditions shall not constitute a waiver of such a right or provision.")}<p>
-    <p>${_("If a provision of the Contract is found to be entirely or partially invalid, You nevertheless accept that the intentions, as reflected in the provision, shall be enforced to the greatest possible extent and that the other provisions of the Contract remain valid.")}</p>
-    <p>${_("You shall not assign or transfer any of your rights or obligations, nor shall You subcontract the performance of your obligations. TDR may assign or transfer any right or obligation, or may subcontract the performance of any of its obligations resulting from the Contract to a third-party at any time, without your express consent, as it is understood that your consent is provided through the present CGU.")}<p>
-    <p>${_("The present CGU, as well as any document constituting the Contract, shall only be modified in writing. Use of electronic messaging is considered sufficient.")}</p>
+    <h2 id="p8">8. Miscellaneous</h2>
+    <p>TDR's failure to exercise or enforce any right or provision in the terms and conditions shall not constitute a waiver of such a right or provision.</p>
+    <p>If a provision of the Contract is found to be entirely or partially invalid, You nevertheless accept that the intentions, as reflected in the provision, shall be enforced to the greatest possible extent and that the other provisions of the Contract remain valid.</p>
+    <p>You shall not assign or transfer any of your rights or obligations, nor shall You subcontract the performance of your obligations. TDR may assign or transfer any right or obligation, or may subcontract the performance of any of its obligations resulting from the Contract to a third-party at any time, without your express consent, as it is understood that your consent is provided through the present CGU.</p>
+    <p>The present CGU, as well as any document constituting the Contract, shall only be modified in writing. Use of electronic messaging is considered sufficient.</p>
 
-    <h2 id="p9">9. ${_("Jurisdiction and applicable law")}</h2>
-    <p>${_("The Contract and all resulting questions or questions in connection with it, including those relating to the use of the Website and the Services, shall be governed by and construed in accordance with Swiss law, without regard to conflict of law principles. You hereby agree that the courts of the district of Lausanne (Switzerland) shall have exclusive jurisdiction. Nothing in or in relating to this GCU shall be deemed a waiver of any of the privileges and immunities of WHO in conformity with the Convention on the Privilege and Immunities of The Specialised Agencies  approved by the General Assembly of the United Nations on November 21, 1947 or otherwise under any national or international law, convention and agreement.")}</p>
+    <h2 id="p9">9. Jurisdiction and applicable law</h2>
+    <p>The Contract and all resulting questions or questions in connection with it, including those relating to the use of the Website and the Services, shall be governed by and construed in accordance with Swiss law, without regard to conflict of law principles. You hereby agree that the courts of the district of Lausanne (Switzerland) shall have exclusive jurisdiction. Nothing in or in relating to this GCU shall be deemed a waiver of any of the privileges and immunities of WHO in conformity with the Convention on the Privilege and Immunities of The Specialised Agencies  approved by the General Assembly of the United Nations on November 21, 1947 or otherwise under any national or international law, convention and agreement.</p>
 
-    <h2 id="p10">10. ${_("Contact")}</h2>
-    <p>${_("For all questions regarding the CGU, and to report any violation, please contact us at WHO/TDR, 20 Ave Appia 1211 Geneva 27.")}</p>
+    <h2 id="p10">10. Contact</h2>
+    <p>For all questions regarding the CGU, and to report any violation, please contact us at WHO/TDR, 20 Ave Appia 1211 Geneva 27.</p>
 
-    <h2 id="p11">11. ${_("Appendix")}</h2>
-    <p>${_("Some course videos may be hosted on YouTube. In such case, the <a href='https://www.youtube.com/t/terms'>YouTube terms of service</a> apply.")}</p>
+    <h2 id="p11">11. Appendix</h2>
+    <p>Some course videos may be hosted on YouTube. In such case, the <a href="https://www.youtube.com/t/terms">YouTube terms of service</a> applies.</p>
   </section>
 </main>
