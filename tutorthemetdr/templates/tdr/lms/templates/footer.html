@@ -59,13 +59,14 @@
     </nav>
     {% endif %}
   </div>
+
+  % if context.get('include_language_selector', footer_language_selector_is_enabled()):
+    <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
+  % endif
+
   <span class="copyright-site">Copyrights ©${datetime.now().year}. All Rights Reserved.</span>
   % endif
     <div class="colophon">
-
-      % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-          <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-      % endif
 
       ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
         <p class="copyright">${footer['copyright']}
@@ -128,13 +129,14 @@
       </nav>
       {% endif %}
     </div>
+
+    % if context.get('include_language_selector', footer_language_selector_is_enabled()):
+      <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
+    % endif
+
     <span class="copyright-site">Copyrights ©${datetime.now().year}. All Rights Reserved.</span>
     % endif
       <div class="colophon">
-
-        % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-            <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-        % endif
 
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
           <p class="copyright">${footer['copyright']}

@@ -213,3 +213,9 @@ for mfe in themetdr_styled_mfes:
   """,
         ),
     )
+
+hooks.Filters.ENV_PATCHES.add_items(
+    [
+        ("lms-env-features", "SHOW_FOOTER_LANGUAGE_SELECTOR: true"),
+    ]
+)

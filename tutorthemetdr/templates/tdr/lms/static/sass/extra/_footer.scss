@@ -16,7 +16,6 @@ footer.tutor-container {
         text-align: left;
     }
     .footer-top {
-        margin: 0 0 15px;
         &:after {
             clear: both;
             display: block;
@@ -86,6 +85,15 @@ footer.tutor-container {
         font-size: 12px;
         line-height: 16px;
         color: $light-dark;
+    }
+    .footer-language-selector {
+        font-size: 14px;
+        height: 32px;
+        .form-control {
+            border: 1px solid $border-color-d;
+            border-radius: .375rem;
+            color: $dark;
+        }
     }
 }
 
