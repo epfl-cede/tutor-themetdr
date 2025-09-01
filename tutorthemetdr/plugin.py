@@ -133,7 +133,60 @@ const { default: IndigoFooter } = await import('@epfl-cede/indigo-frontend-compo
         ]
     )
 
+# add THEME arg
+# update browserlist package
+hooks.Filters.ENV_PATCHES.add_items(
+    [
+        (
+            "mfe-dockerfile-post-npm-install",
+            """
+ARG THEME=red
+RUN npx browserslist@latest --update-db
+""",
+        )
+    ]
+)
 
+hooks.Filters.IMAGES_BUILD.add_items(
+    [
+        (
+            "mfe-sms-red",
+            "plugins/mfe/build/mfe",
+            "{{ DOCKER_IMAGE_MFE_RED }}",
+            ["--build-arg", "THEME=red"],
+        ),
+        (
+            "mfe-sms-blue",
+            "plugins/mfe/build/mfe",
+            "{{ DOCKER_IMAGE_MFE_BLUE }}",
+            ["--build-arg", "THEME=blue"],
+        ),
+        (
+            "mfe-sms-green",
+            "plugins/mfe/build/mfe",
+            "{{ DOCKER_IMAGE_MFE_GREEN }}",
+            ["--build-arg", "THEME=green"],
+        ),
+    ]
+)
+
+hooks.Filters.IMAGES_PULL.add_items(
+    [
+        ("mfe-sms-red", "{{ DOCKER_IMAGE_MFE_RED }}"),
+        ("mfe-sms-blue", "{{ DOCKER_IMAGE_MFE_BLUE }}"),
+        ("mfe-sms-green", "{{ DOCKER_IMAGE_MFE_GREEN }}"),
+    ]
+)
+
+hooks.Filters.IMAGES_PUSH.add_items(
+    [
+        ("mfe-sms-red", "{{ DOCKER_IMAGE_MFE_RED }}"),
+        ("mfe-sms-blue", "{{ DOCKER_IMAGE_MFE_BLUE }}"),
+        ("mfe-sms-green", "{{ DOCKER_IMAGE_MFE_GREEN }}"),
+    ]
+)
+
+# authn branding
 hooks.Filters.ENV_PATCHES.add_item(
     (
         "mfe-dockerfile-post-npm-install-authn",
