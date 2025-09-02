@@ -120,7 +120,7 @@ for mfe in themetdr_styled_mfes:
                 """
 RUN npm install '@epfl-cede/indigo-frontend-component-footer@git+https://git@github.com/epfl-cede/frontend-component-footer#sms/indigo'
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.2.2'
-RUN npm install '@edx/brand@git+https://git@github.com/epfl-cede/brand-cede#sms/sumac-blue.2'
+RUN npm install '@edx/brand@git+https://git@github.com/epfl-cede/brand-cede#sms/sumac-blue.3'
 
 """,
             ),
