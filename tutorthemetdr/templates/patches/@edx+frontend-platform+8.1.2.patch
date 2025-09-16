@@ -1,0 +1,36 @@
+diff --git a/node_modules/@edx/frontend-platform/auth/AxiosJwtAuthService.js b/node_modules/@edx/frontend-platform/auth/AxiosJwtAuthService.js
+index 23b235e..554d8ed 100644
+--- a/node_modules/@edx/frontend-platform/auth/AxiosJwtAuthService.js
++++ b/node_modules/@edx/frontend-platform/auth/AxiosJwtAuthService.js
+@@ -273,6 +273,7 @@ var AxiosJwtAuthService = /*#__PURE__*/function () {
+                   email: decodedAccessToken.email,
+                   userId: decodedAccessToken.user_id,
+                   username: decodedAccessToken.preferred_username,
++                  displayname: decodedAccessToken.display_username,
+                   roles: decodedAccessToken.roles || [],
+                   administrator: decodedAccessToken.administrator,
+                   name: decodedAccessToken.name
+diff --git a/node_modules/@edx/frontend-platform/config.js b/node_modules/@edx/frontend-platform/config.js
+index 1ff0171..b476fea 100644
+--- a/node_modules/@edx/frontend-platform/config.js
++++ b/node_modules/@edx/frontend-platform/config.js
+@@ -167,7 +167,9 @@ var config = {
+   FAVICON_URL: process.env.FAVICON_URL,
+   MFE_CONFIG_API_URL: process.env.MFE_CONFIG_API_URL,
+   APP_ID: process.env.APP_ID,
+-  SUPPORT_URL: process.env.SUPPORT_URL
++  SUPPORT_URL: process.env.SUPPORT_URL,
++  CATALOG_BASE_URL: process.env.CATALOG_BASE_URL,
++  CATALOG_ORGANIZATION_NAME: process.env.CATALOG_ORGANIZATION_NAME
+ };
+ 
+ /**
+@@ -322,5 +324,7 @@ export function ensureConfig(keys) {
+  * @property {string} MFE_CONFIG_API_URL
+  * @property {string} APP_ID
+  * @property {string} SUPPORT_URL
++ * @property {string} CATALOG_BASE_URL
++ * @property {string} CATALOG_ORGANIZATION_NAME
+  */
+ //# sourceMappingURL=config.js.map
+\ No newline at end of file

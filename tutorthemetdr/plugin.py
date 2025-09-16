@@ -24,6 +24,8 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
         "WELCOME_MESSAGE": "The place for all your online learning",
         "PRIMARY_COLOR": "#15376D",  # TDR
         "ENABLE_DARK_TOGGLE": True,
+        "CATALOG_BASE_URL": "",
+        "CATALOG_ORGANIZATION_NAME": "",
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
         # tutor config save --set THEMETDR_FOOTER_NAV_LINKS=[]
@@ -48,6 +50,7 @@ hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
     [
         ("tdr", "build/openedx/themes"),
         ("tdr/env.config.jsx", "plugins/mfe/build/mfe"),
+        ("patches", "plugins/mfe/build/mfe"),
     ],
 )
 
@@ -101,6 +104,17 @@ hooks.Filters.CONFIG_UNIQUE.add_items(
 )
 hooks.Filters.CONFIG_OVERRIDES.add_items(list(config["overrides"].items()))
 
+hooks.Filters.ENV_PATCHES.add_items(
+    [
+        (
+            "mfe-dockerfile-base",
+            """
+RUN --mount=type=cache,target=/root/.npm,sharing=shared npm install patch-package --no-audit --no-fund --registry=$NPM_REGISTRY
+
+""",
+        ),
+    ]
+)
 
 #  MFEs that are styled using Themetdr
 themetdr_styled_mfes = [
@@ -122,6 +136,9 @@ RUN npm install '@epfl-cede/indigo-frontend-component-footer@git+https://git@git
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.2.2'
 RUN npm install '@edx/brand@git+https://git@github.com/epfl-cede/brand-cede#sms/sumac-blue.4'
 
+COPY ./patches/@edx+frontend-platform+8.1.2.patch /openedx/app/patches/@edx+frontend-platform+8.1.2.patch
+RUN npx patch-package
+
 """,
             ),
             (
@@ -133,17 +150,26 @@ const { default: IndigoFooter } = await import('@epfl-cede/indigo-frontend-compo
         ]
     )
 
-# add THEME arg
-# update browserlist package
 hooks.Filters.ENV_PATCHES.add_items(
     [
+        # add THEME arg
+        # update browserlist package
         (
             "mfe-dockerfile-post-npm-install",
             """
 ARG THEME=red
 RUN npx browserslist@latest --update-db
 """,
-        )
+        ),
+        # setup CATALOG related settings
+        (
+            "mfe-lms-common-settings",
+            """
+MFE_CONFIG["CATALOG_BASE_URL"] = "{{ THEMETDR_CATALOG_BASE_URL }}"
+MFE_CONFIG["CATALOG_ORGANIZATION_NAME"] = "{{ THEMETDR_CATALOG_ORGANIZATION_NAME }}"
+
+""",
+        ),
     ]
 )
 
