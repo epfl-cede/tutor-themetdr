@@ -26,6 +26,7 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
         "ENABLE_DARK_TOGGLE": True,
         "CATALOG_BASE_URL": "",
         "CATALOG_ORGANIZATION_NAME": "",
+        "BRAND_VERSION": "sms/sumac-red.1",
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
         # tutor config save --set THEMETDR_FOOTER_NAV_LINKS=[]
@@ -133,8 +134,8 @@ for mfe in themetdr_styled_mfes:
                 f"mfe-dockerfile-post-npm-install-{mfe}",
                 """
 RUN npm install '@epfl-cede/indigo-frontend-component-footer@git+https://git@github.com/epfl-cede/frontend-component-footer#sms/indigo'
-RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.2.2'
-RUN npm install '@edx/brand@git+https://git@github.com/epfl-cede/brand-cede#sms/sumac-blue.4'
+RUN npm install '@edx/frontend-component-header@git+https://git@github.com/epfl-cede/frontend-component-header#sms/indigo'
+RUN npm install '@edx/brand@git+https://git@github.com/epfl-cede/brand-cede#{{ THEMETDR_BRAND_VERSION }}'
 
 COPY ./patches/@edx+frontend-platform+8.1.2.patch /openedx/app/patches/@edx+frontend-platform+8.1.2.patch
 RUN npx patch-package

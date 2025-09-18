@@ -6,7 +6,7 @@ index 23b235e..554d8ed 100644
                    email: decodedAccessToken.email,
                    userId: decodedAccessToken.user_id,
                    username: decodedAccessToken.preferred_username,
-+                  displayname: decodedAccessToken.display_username,
++                  displayname: decodedAccessToken.name,
                    roles: decodedAccessToken.roles || [],
                    administrator: decodedAccessToken.administrator,
                    name: decodedAccessToken.name
